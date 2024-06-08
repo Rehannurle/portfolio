@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      font-family: 'Montserrat';
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-size: 18px;
+      color: rgb(26, 26, 77);
+      background-color: #fffffe;
+    }
+
+    .firstline {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(138, 183, 218, 0.63);
+      padding: 50px 15px;
+    }
+
+    .firstline a:hover {
+      color: #007bff;
+      font-weight: 500;
+    }
+
+
+    .circle {
+      position: relative;
+      height: 70px;
+      width: 70px;
+      border: 2px solid black;
+      background-color: red;
+      border-radius: 50%;
+      left: 10px;
+      bottom: 40px;
+      animation: d1 3s linear 1s infinite alternate-reverse;
+      background-image: url("OIP (1).jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes d1 {
+      from {
+        transform: rotateY(0deg);
+        background-color: white;
+      }
+
+      to {
+        transform: rotateY(360deg);
+        background-color: rgb(249, 244, 234);
+      }
+    }
+
+    .container {
+      margin: 40px;
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    #about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .about-text {
+      width: 60%;
+      line-height: 1.5;
+    }
+
+    .about-text a {
+      color: blue;
+    }
+
+    .bold {
+      font-size: 45px;
+      font-weight: bolder;
+    }
+
+    .namehighlight {
+      color: #71b2ff;
+    }
+
+    .about-image {
+      height: 100px;
+      width: 100px;
+      border: 2px solid black;
+      border-radius: 50%;
+      background-image: url("re1.jpg");
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transition: all 3s ease 0s;
+    }
+
+    .about-image:hover {
+      transform: rotateY(180deg);
+      background-image: url("re2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    #about,
+    #skills,
+    #hobbies,
+    #education,
+    #links,
+    #contact {
+      margin: 20px 0;
+      padding: 20px;
+    }
+
+    header,
+    footer {
+      background-color: rgb(225, 241, 255);
+    }
+
+    #skills {
+      margin-bottom: 40px;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skill {
+      background-color: #b3ddff;
+      padding: 20px;
+      margin: 10px;
+      flex: 1;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .skill-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    .icon {
+      width: 30px;
+      height: auto;
+      margin: 0 5px;
+    }
+
+    #hobbies {
+      width: 100%;
+      text-align: flex-start;
+      margin: 20px;
+    }
+
+    #hobbies h2 {
+      margin-bottom: 20px;
+    }
+
+    #hobbies li {
+      width: 30%;
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    #hobbies img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+    }
+
+    #hobbies ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    #hobbies #i1 {
+      height: 290px;
+      width: 450px;
+      object-fit: cover;
+    }
+
+    #hobbies #i2 {
+      height: 290px;
+      width: 450px;
+      object-fit: cover;
+
+    }
+
+    #education {
+      width: 100%;
+      margin: 30px 0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #education th {
+      background-color: #b3ddff;
+    }
+
+    #education td {
+      background-color: white;
+    }
+
+    #education table {
+      width: 100%;
+      font-size: 15px;
+      border-collapse: collapse;
+    }
+
+    #education th,
+    #education td {
+      width: 100%;
+      margin: 30px 0;
+      padding: 10px 15px;
+      border: 1px solid #7182ff;
+    }
+
+    #contact div {
+      margin-bottom: 20px;
+    }
+
+    #contact input[type="text"],
+    #contact select,
+    #contact input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+      margin-top: 8px;
+    }
+
+    #contact input[type="text"]:focus,
+    #contact input[type="password"]:focus,
+    #contact select:focus {
+      border-color: #d2eaff;
+      outline: none;
+    }
+
+    #contact input[type="radio"],
+    #contact input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    #contact input[type="submit"] {
+      padding: 10px 20px;
+      color: #0d3454;
+      background-color: #d2eaff;
+      border: none;
+      border: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #contact input[type="submit"]:hover {
+      background-color: #71b2ff;
+    }
+
+    #links {
+      padding: 35px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    #links a {
+      background-color: #0d3454;
+      color: white;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.1s;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #links p {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    #links a:hover {
+      background-color: rgb(133, 175, 219);
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d3454;
+      transition: color 0.3s;
+      text-align: center;
+      margin-left: 45px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class=" firstline">
+      <div class="circle">
+      </div>
+      <a href="#about">About me</a>
+      <a href="#skills">Skills</a>
+      <a href="#links">Links</a>
+    </div>
+  </header>
+  <div class="container">
+
+    <section id="about">
+      <div class="about-text">
+
+        <h2 class="section-title">About me</h2>
+        <p class="bold"> Hello , I'm <span class="namehighlight">Rehan Nurle</span>,a budding web developer,</p>
+        <p>I have always been
+          fascinated by the digitalreal,and through my journey.I have learned to
+          communicate in the language of the web HTML.Curious to know more or
+          collaborate ona project?check out my detailed.
+          <a href="#profile"> Profile </a>or <a href="#contact">Reach out</a> to me!
+        </p>
+      </div>
+
+      <div class="about-image">
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">skills</h2>
+      <div class="skills-container">
+        <div class="skill">
+          Web development
+          <div class="skill-icons">
+            <img src="html.jpeg" alt="html logo" class="icon">HTML
+            <img src="css.png" alt="css logo" class="icon">CSS
+            <img src="js.png" alt="javascript logo" class="icon">JS
+          </div>
+        </div>
+
+        <div class="skill">
+          Design
+          <div class="skill-icons">
+            UI UX & Graphics
+          </div>
+        </div>
+
+        <div class="skill">
+          Languages
+          <div class="skill-icons">
+            <img src="fg2.jpg" alt="english logo" class="icon">English
+            <img src="fg1.jpg" alt="hindi logo" class="icon">Hindi
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies">
+      <h2 class="section-title">List of My Hobbies </h2>
+      <ul>
+        <li>
+          <img src="camera.jpg" alt="photography">
+          Photography
+        </li>
+        <li>
+          <img id="i1" src="travel.jpeg" alt="travelling">
+          Travelling
+        </li>
+        <li>
+          <img id="i2" src="read.jpeg" alt="reading">
+          Reading
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title"> My Education</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Instituition</th>
+          <th>Qualification</th>
+        </tr>
+
+        <tr>
+          <td> 2022-2025</td>
+          <td> University of Mumbai</td>
+          <td> Bachelor of Science in IT</td>
+        </tr>
+
+        <tr>
+          <td> 2025-2027</td>
+          <td> University of Mumbai</td>
+          <td> Master of Science in IT</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact me</h2>
+      <div>
+        <label for="contact-name">Name:</label>
+        <input type="text" id="contact-name" name="name" />
+
+        <label for="contact-password">Password:</label>
+        <input type="password" id="contact-password" name="password" />
+      </div>
+
+      <div>
+        <label for="contact-preferred">Preferred method of contact:</label>
+        <input type="radio" id="contact-email" name="prefered-contact" value="email" />Email
+        <input type="radio" id="contact-email" name="prefered-contact" value="phone" />Phone
+      </div>
+
+      <div>
+        <input type="checkbox" id="contact-newsletter" name="newsletter" />
+        <label for="contact-newsletter">Subscribe to my newsletter</label>
+      </div>
+
+      <div>
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="INDIA">INDIA</option>
+          <option value="USA">USA</option>
+          <option value="EUROPE">EUROPE</option>
+        </select>
+      </div>
+
+      <input type="submit" value="send message">
+  </div>
+  </section>
+
+  <section id="links">
+    <h2 class="section-title"> Connect with me</h2>
+    <p>
+      <a href="www.linkedin.com/in/rehan-nurle-0937b5216" target="_blank">
+        Linkedin</a>
+    </p>
+
+    <p>
+      <a href="https://www.github.com/in/Rehannurle" target="_blank">
+        Github</a>
+    </p>
+  </section>
+
+  <footer>
+    <p> © 2024 Rehan sharif Nurle.All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>
